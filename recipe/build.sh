@@ -16,14 +16,10 @@ if [ `uname` == Linux ]; then
     curl -s -L -O https://github.com/bazelbuild/bazel/archive/0.3.1.tar.gz
     tar xf 0.3.1.tar.gz
     cd bazel-0.3.1
-    #./compile.sh
-    #mkdir -p ~/bin
-    #cp output/bazel ~/bin/
+    ./compile.sh
+    mkdir -p ~/bin
+    cp output/bazel ~/bin/
     cd ..
-
-    # debug
-    pwd
-    ls
 
     # Compile tensorflow from source
 
