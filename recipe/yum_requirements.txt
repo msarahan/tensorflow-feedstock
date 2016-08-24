@@ -1,0 +1,5 @@
+java-1.8.0-openjdk-devel
+unzip
+zip
+zlib-devel
+rsync
