@@ -34,7 +34,7 @@ if [ `uname` == Linux ]; then
     cat tensorflow/tools/swig/swig.sh
 
     # build wheel using bazel
-    bazel build -c opt //tensorflow/tools/pip_package:build_pip_package
+    bazel build --jobs 2 -c opt //tensorflow/tools/pip_package:build_pip_package
     mkdir $SRC_DIR/tensorflow_pkg
     bazel-bin/tensorflow/tools/pip_package/build_pip_package $SRC_DIR/tensorflow_pkg
 
