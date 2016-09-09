@@ -6,6 +6,8 @@ source:
   fn: v0.9.0.tar.gz
   url: https://github.com/tensorflow/tensorflow/archive/v0.9.0.tar.gz
   sha256: 3128c396af19518c642d3e590212291e1d93c5b047472a10cf3245b53adac9c9
+  patches:
+    - use_conda_includes_and_libs.patch
 
 build:
   number: 1
@@ -27,6 +29,9 @@ requirements:
     - protobuf ==3.0.0b2
     - six >=1.10.0
     - wheel
+    - zlib
+    - zip
+    - unzip
   run:
     - python
     - numpy >=1.10.1
@@ -44,5 +49,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - jjhelmus
     - danielfrg
+    - jjhelmus
+    - msarahan

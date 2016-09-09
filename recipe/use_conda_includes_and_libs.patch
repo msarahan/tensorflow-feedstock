@@ -1,0 +1,24 @@
+diff --git a/grpc.BUILD b/grpc.BUILD
+index c3360b6..4ea998d 100644
+--- a/grpc.BUILD
++++ b/grpc.BUILD
+@@ -445,6 +445,7 @@ cc_library(
+   includes = [
+     "include",
+     ".",
++    "$$PREFIX/include"
+   ],
+   deps = [
+     ":gpr",
+diff --git a/png.BUILD b/png.BUILD
+index 1ecf150..f5594c9 100644
+--- a/png.BUILD
++++ b/png.BUILD
+@@ -35,6 +35,6 @@ cc_library(
+     srcs = [prefix_dir + "/" + source for source in PNG_SOURCES],
+     hdrs = glob(["**/*.h"]) + [":configure"],
+     includes = [prefix_dir],
+-    linkopts = ["-lz"],
++    linkopts = ["-lz", "-L$$PREFIX/lib"],
+     visibility = ["//visibility:public"],
+ )
